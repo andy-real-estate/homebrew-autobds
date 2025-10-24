@@ -23,8 +23,17 @@ cask "autobds" do
 
   app "autoBDS.app"
 
-  # Remove quarantine attribute on installation (Homebrew does this automatically!)
-  # No additional scripts needed - Homebrew handles it
+  # Remove quarantine attribute after installation
+  # Required for unsigned/adhoc-signed apps
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-rd", "com.apple.quarantine", "#{appdir}/autoBDS.app"],
+                   sudo: false
+  end
+
+  uninstall_postflight do
+    # No cleanup needed
+  end
 
   zap trash: [
     "~/Library/Application Support/autoBDS",
