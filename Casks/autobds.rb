@@ -1,13 +1,13 @@
 cask "autobds" do
-  version "0.2.4"
+  version "0.2.5"
 
   # Architecture-specific downloads
   if Hardware::CPU.arm?
     url "https://pub-c378a27ce1204d59aadecec2b7e4f969.r2.dev/v#{version}/autoBDS-#{version}-arm64.dmg"
-    sha256 "f1401ae1d42a9cad61a2868de38e3d083e046f4d7a7b0cd5a9d030a5a60c3023"  # TODO: Update after uploading v0.2.1 DMG
+    sha256 "8d4a82456805b1b25c154b4410059bb9479220b1c061248698d304d106da74cd"  # TODO: Update after uploading v0.2.1 DMG
   else
     url "https://pub-c378a27ce1204d59aadecec2b7e4f969.r2.dev/v#{version}/autoBDS-#{version}.dmg"
-    sha256 "054540c80c2e72ea9a33a15dd5ac6e7b2cd88e1addd56fe15c946bef0f5ebe13"  # TODO: Update after uploading v0.2.1 DMG
+    sha256 "458cdee5007a5b060c7e5f0808c6687baaa0796e93b9908b3c1380ced8bd37f0"  # TODO: Update after uploading v0.2.1 DMG
   end
 
   name "autoBDS"
